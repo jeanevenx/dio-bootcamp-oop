@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52ce0e3f-a571-4d62-a555-a15aaa58696b" name="Changes" comment="Implemented an interface for bootcamp" />
+    <list default="true" id="52ce0e3f-a571-4d62-a555-a15aaa58696b" name="Changes" comment="Implemented an interface for student">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/BootcampServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/model/Bootcamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/model/Bootcamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/IBootcamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/IBootcamp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -137,7 +142,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679598778946</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update">
+      <created>1679599392413</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679599392413</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implemented an interface for course">
+      <created>1679600727730</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679600727730</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Implemented an interface for student">
+      <created>1679600772905</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679600772905</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +190,9 @@
     <MESSAGE value="Implementing the RecordedCourse domain model" />
     <MESSAGE value="Implementing Interface" />
     <MESSAGE value="Implemented an interface for bootcamp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented an interface for bootcamp" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Implemented an interface for course" />
+    <MESSAGE value="Implemented an interface for student" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented an interface for student" />
   </component>
 </project>

@@ -16,7 +16,7 @@ public class Bootcamp {
     private String category;
     private LocalDate beginning;
     private LocalDate duration;
-    private double totalHour;
+
     private Set<Course> courseSet = new LinkedHashSet<>();
     private Set<Student> studentSet = new HashSet<>();
     private Set<Teacher> teacherSet = new HashSet<>();
@@ -25,13 +25,7 @@ public class Bootcamp {
         this.id = IDUtil.uniqueID(this.getName());
     }
 
-    public double getTotalHour() {
-        return totalHour;
-    }
 
-    public void setTotalHour(double totalHour) {
-        this.totalHour = totalHour;
-    }
 
     public  void enrollment(Student student){
 
@@ -90,8 +84,8 @@ public class Bootcamp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return Double.compare(bootcamp.totalHour, totalHour) == 0
-                && Objects.equals(id, bootcamp.id) && Objects.equals(name, bootcamp.name)
+        return Objects.equals(id, bootcamp.id)
+                && Objects.equals(name, bootcamp.name)
                 && Objects.equals(description, bootcamp.description) && Objects.equals(category, bootcamp.category)
                 && Objects.equals(beginning, bootcamp.beginning) && Objects.equals(duration, bootcamp.duration)
                 && Objects.equals(courseSet, bootcamp.courseSet) && Objects.equals(studentSet, bootcamp.studentSet)
@@ -100,7 +94,7 @@ public class Bootcamp {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, category, beginning, duration, totalHour, courseSet, studentSet, teacherSet);
+        return Objects.hash(id, name, description, category, beginning, duration, courseSet, studentSet, teacherSet);
     }
 
     @Override
@@ -112,10 +106,33 @@ public class Bootcamp {
                 ", category='" + category + '\'' +
                 ", beginning=" + beginning +
                 ", duration=" + duration +
-                ", totalHour=" + totalHour +
                 ", courseSet=" + courseSet +
                 ", studentSet=" + studentSet +
                 ", teacherSet=" + teacherSet +
                 '}';
+    }
+
+    public Set<Course> getCourseSet() {
+        return courseSet;
+    }
+
+    public void setCourseSet(Set<Course> courseSet) {
+        this.courseSet = courseSet;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
+    }
+
+    public Set<Teacher> getTeacherSet() {
+        return teacherSet;
+    }
+
+    public void setTeacherSet(Set<Teacher> teacherSet) {
+        this.teacherSet = teacherSet;
     }
 }
