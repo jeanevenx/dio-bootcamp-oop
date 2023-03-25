@@ -9,6 +9,8 @@ import java.util.Set;
 
 public interface IBootcamp {
     public void createBootcamp(Bootcamp bootcamp);
+    public List<Bootcamp> getAllBootcamp();
+    public List<Bootcamp> getOneBootcamp(String name);
     public double GetTotalHour();
     public List<String> getAllStudent();
     public Set<Course> getAllCourse();

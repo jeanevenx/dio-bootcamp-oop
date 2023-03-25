@@ -8,13 +8,20 @@ import java.util.List;
 import java.util.Set;
 
 public class BootcampServiceImpl implements IBootcamp{
-    int numberOfStudent = 0;
+    List<Bootcamp> bootcampSet = new ArrayList<>();
     @Override
     public void createBootcamp(Bootcamp bootcamp) {
+        bootcampSet.add(bootcamp);
+    }
 
-        Set<Bootcamp> bootcampSet = new LinkedHashSet<>();
+    @Override
+    public List<Bootcamp> getAllBootcamp() {
+        return bootcampSet;
+    }
 
-            bootcampSet.add(bootcamp);
+    @Override
+    public List<Bootcamp> getOneBootcamp(String name) {
+        return null;
     }
 
     @Override
@@ -60,4 +67,5 @@ public class BootcampServiceImpl implements IBootcamp{
 
         return student.getStudentSet().size();
     }
+
 }
