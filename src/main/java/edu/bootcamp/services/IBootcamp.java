@@ -13,7 +13,7 @@ public interface IBootcamp {
     public List<Bootcamp> getOneBootcamp(String name);
     public double GetTotalHour();
     public List<String> getAllStudent();
-    public Set<Course> getAllCourse();
-    public Set<Teacher> getAllTeacher();
+    public List<Course> getAllCourse();
+    public List<Teacher> getAllTeacher();
     public Integer getNumberOfStudent();
 }
