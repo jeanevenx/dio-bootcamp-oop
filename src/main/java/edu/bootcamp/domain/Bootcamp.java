@@ -1,4 +1,4 @@
-package edu.bootcamp.model;
+package edu.bootcamp.domain;
 
 import edu.bootcamp.utility.IDUtil;
 
@@ -23,10 +23,6 @@ public class Bootcamp {
     }
 
 
-
-    public  void enrollment(Student student){
-
-    }
 
     public String getId() {
         return id;
@@ -109,9 +105,9 @@ public class Bootcamp {
                 ", category='" + category + '\'' +
                 ", beginning=" + beginning +
                 ", duration=" + duration +
-                ", courseSet=" + courseList +
-                ", studentSet=" + studentList +
-                ", teacherSet=" + teacherList +
+                ", courseList=" + courseList +
+                ", studentList=" + studentList +
+                ", teacherList=" + teacherList +
                 '}';
     }
 

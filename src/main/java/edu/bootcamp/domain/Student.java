@@ -1,10 +1,8 @@
-package edu.bootcamp.model;
+package edu.bootcamp.domain;
 
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Objects;
 
 public class Student {
     private String id;

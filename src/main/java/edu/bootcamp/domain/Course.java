@@ -1,4 +1,4 @@
-package edu.bootcamp.model;
+package edu.bootcamp.domain;
 
 import java.util.Objects;
 
