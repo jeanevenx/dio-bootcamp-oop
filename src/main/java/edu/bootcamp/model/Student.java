@@ -1,16 +1,17 @@
 package edu.bootcamp.model;
 
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Student {
     private String id;
     private String name;
     private String username;
     private String email;
-    private Set<Bootcamp> bootcampSet = new LinkedHashSet<>();
+    private List<Bootcamp> bootcampList = new ArrayList<>();
 
 
     public String getId() {
@@ -45,25 +46,12 @@ public class Student {
         this.email = email;
     }
 
-    public Set<Bootcamp> getBootcampSet() {
-        return bootcampSet;
+    public List<Bootcamp> getBootcampList() {
+        return bootcampList;
     }
 
-    public void setBootcampSet(Set<Bootcamp> bootcampSet) {
-        this.bootcampSet = bootcampSet;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(id, student.id) && Objects.equals(name, student.name) && Objects.equals(username, student.username) && Objects.equals(email, student.email) && Objects.equals(bootcampSet, student.bootcampSet);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, username, email, bootcampSet);
+    public void setBootcampList(List<Bootcamp> bootcampList) {
+        this.bootcampList = bootcampList;
     }
 
     @Override
@@ -73,7 +61,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", bootcampSet=" + bootcampSet +
+                ", bootcampSet=" + bootcampList +
                 '}';
     }
 }
