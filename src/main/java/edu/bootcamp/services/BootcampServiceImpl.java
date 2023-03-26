@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.Set;
 
 public class BootcampServiceImpl implements IBootcamp{
-    List<Bootcamp> bootcampSet = new ArrayList<>();
+    List<Bootcamp> bootcampList = new ArrayList<>();
     @Override
     public void createBootcamp(Bootcamp bootcamp) {
-        bootcampSet.add(bootcamp);
+        bootcampList.add(bootcamp);
     }
 
     @Override
     public List<Bootcamp> getAllBootcamp() {
-        return bootcampSet;
+        return bootcampList;
     }
 
     @Override
@@ -30,8 +30,8 @@ public class BootcampServiceImpl implements IBootcamp{
 
         double totalOfHour = 0.0;
 
-        for(int i = 0; i <= course.getCourseSet().size(); i++){
-            totalOfHour += course.getCourseSet().iterator().next().getNumberOfHour();
+        for(int i = 0; i <= course.getCourseList().size(); i++){
+            totalOfHour += course.getCourseList().iterator().next().getNumberOfHour();
         }
         return totalOfHour;
     }
@@ -41,31 +41,31 @@ public class BootcampServiceImpl implements IBootcamp{
         List<String> studentList = new ArrayList<>();
         Bootcamp student = new Bootcamp();
 
-        for (int i = 0; i <= student.getStudentSet().size(); i++) {
-            studentList.add(student.getStudentSet().iterator().next().getName());
+        for (int i = 0; i <= student.getCourseList().size(); i++) {
+            studentList.add(student.getStudentList().iterator().next().getName());
         }
 
         return studentList;
     }
 
     @Override
-    public Set<Course> getAllCourse() {
+    public List<Course> getAllCourse() {
         Bootcamp course = new Bootcamp();
 
-        return course.getCourseSet();
+        return course.getCourseList();
     }
 
     @Override
-    public Set<Teacher> getAllTeacher() {
+    public List<Teacher> getAllTeacher() {
         Bootcamp teacher = new Bootcamp();
-        return teacher.getTeacherSet();
+        return teacher.getTeacherList();
     }
 
     @Override
     public Integer getNumberOfStudent() {
         Bootcamp student = new Bootcamp();
 
-        return student.getStudentSet().size();
+        return student.getStudentList().size() + 1;
     }
 
 }
