@@ -3,10 +3,7 @@ package edu.bootcamp.model;
 import edu.bootcamp.utility.IDUtil;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Bootcamp {
 
@@ -17,9 +14,9 @@ public class Bootcamp {
     private LocalDate beginning;
     private LocalDate duration;
 
-    private Set<Course> courseSet = new LinkedHashSet<>();
-    private Set<Student> studentSet = new HashSet<>();
-    private Set<Teacher> teacherSet = new HashSet<>();
+    private List<Course> courseList = new ArrayList<>();
+    private List<Student> studentList = new ArrayList<>();
+    private List<Teacher> teacherList = new ArrayList<>();
 
     public Bootcamp() {
         this.id = IDUtil.uniqueID(this.getName());
@@ -68,7 +65,7 @@ public class Bootcamp {
     }
 
     public void setBeginning(LocalDate beginning) {
-        this.beginning = beginning;
+        this.beginning = beginning.now();
     }
 
     public LocalDate getDuration() {
@@ -79,22 +76,28 @@ public class Bootcamp {
         this.duration = duration;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(id, bootcamp.id)
-                && Objects.equals(name, bootcamp.name)
-                && Objects.equals(description, bootcamp.description) && Objects.equals(category, bootcamp.category)
-                && Objects.equals(beginning, bootcamp.beginning) && Objects.equals(duration, bootcamp.duration)
-                && Objects.equals(courseSet, bootcamp.courseSet) && Objects.equals(studentSet, bootcamp.studentSet)
-                && Objects.equals(teacherSet, bootcamp.teacherSet);
+    public List<Course> getCourseList() {
+        return courseList;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, category, beginning, duration, courseSet, studentSet, teacherSet);
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
+    public List<Teacher> getTeacherList() {
+        return teacherList;
+    }
+
+    public void setTeacherList(List<Teacher> teacherList) {
+        this.teacherList = teacherList;
     }
 
     @Override
@@ -106,33 +109,12 @@ public class Bootcamp {
                 ", category='" + category + '\'' +
                 ", beginning=" + beginning +
                 ", duration=" + duration +
-                ", courseSet=" + courseSet +
-                ", studentSet=" + studentSet +
-                ", teacherSet=" + teacherSet +
+                ", courseSet=" + courseList +
+                ", studentSet=" + studentList +
+                ", teacherSet=" + teacherList +
                 '}';
     }
 
-    public Set<Course> getCourseSet() {
-        return courseSet;
-    }
 
-    public void setCourseSet(Set<Course> courseSet) {
-        this.courseSet = courseSet;
-    }
 
-    public Set<Student> getStudentSet() {
-        return studentSet;
-    }
-
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
-    }
-
-    public Set<Teacher> getTeacherSet() {
-        return teacherSet;
-    }
-
-    public void setTeacherSet(Set<Teacher> teacherSet) {
-        this.teacherSet = teacherSet;
-    }
 }
