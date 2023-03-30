@@ -2,21 +2,13 @@ package edu.bootcamp.domain;
 
 import java.util.Objects;
 
+
 public abstract class  Course{
-    private String id;
     private String title;
     private String description;
     private double numberOfHour;
+    private String status = "unseen";
     private Teacher teacher;
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -42,12 +34,21 @@ public abstract class  Course{
         this.numberOfHour = numberOfHour;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Teacher getTeacher() {
         return teacher;
     }
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+
     }
 
     @Override
@@ -55,21 +56,24 @@ public abstract class  Course{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return Double.compare(course.numberOfHour, numberOfHour) == 0 && Objects.equals(id, course.id) && Objects.equals(title, course.title) && Objects.equals(description, course.description) && Objects.equals(teacher, course.teacher);
+        return Double.compare(course.numberOfHour, numberOfHour) == 0
+                && Objects.equals(title, course.title)
+                && Objects.equals(description, course.description)
+                && Objects.equals(teacher, course.teacher);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, numberOfHour, teacher);
+        return Objects.hash(title, description, numberOfHour, teacher);
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", numberOfHour=" + numberOfHour +
+                ", status=" + status +
                 ", teacher=" + teacher +
                 '}';
     }
