@@ -1,36 +1,19 @@
 package edu.bootcamp.domain;
 
-import edu.bootcamp.utility.IDUtil;
+
 
 import java.time.LocalDate;
 import java.util.*;
 
 public class Bootcamp {
-
-    private String id;
     private String name;
     private String description;
     private String category;
-    private LocalDate beginning;
-    private LocalDate duration;
+    private final LocalDate beginning = LocalDate.now();
+    private final LocalDate duration = beginning.plusDays(90);
 
-    private List<Course> courseList = new ArrayList<>();
-    private List<Student> studentList = new ArrayList<>();
-    private List<Teacher> teacherList = new ArrayList<>();
-
-    public Bootcamp() {
-        this.id = IDUtil.uniqueID(this.getName());
-    }
-
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private Set<Course> courseSet = new LinkedHashSet<>();
+    private Set<String> studentSet = new HashSet<>();
 
     public String getName() {
         return name;
@@ -60,57 +43,62 @@ public class Bootcamp {
         return beginning;
     }
 
-    public void setBeginning(LocalDate beginning) {
-        this.beginning = beginning.now();
-    }
-
     public LocalDate getDuration() {
         return duration;
     }
 
-    public void setDuration(LocalDate duration) {
-        this.duration = duration;
+    public Set<Course> getCourseSet() {
+        return courseSet;
     }
 
-    public List<Course> getCourseList() {
-        return courseList;
+    public void setCourseSet(Set<Course> courseSet) {
+        this.courseSet = courseSet;
     }
 
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
+    public Set<String> getStudentSet() {
+        return studentSet;
     }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public void setStudentSet(Set<String> studentSet) {
+        this.studentSet = studentSet;
     }
 
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
+
+    public void setTeacherSet(Set<String> teacherSet) {
+        for(Course course: this.getCourseSet()){
+
+            teacherSet.add(course.getTeacher().getName());
+        }
     }
 
-    public List<Teacher> getTeacherList() {
-        return teacherList;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bootcamp bootcamp = (Bootcamp) o;
+        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description)
+                && Objects.equals(category, bootcamp.category)
+                && Objects.equals(beginning, bootcamp.beginning)
+                && Objects.equals(duration, bootcamp.duration)
+                && Objects.equals(courseSet, bootcamp.courseSet)
+                && Objects.equals(studentSet, bootcamp.studentSet);
     }
 
-    public void setTeacherList(List<Teacher> teacherList) {
-        this.teacherList = teacherList;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description, category, beginning, duration, courseSet, studentSet);
     }
 
     @Override
     public String toString() {
         return "Bootcamp{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
                 ", beginning=" + beginning +
                 ", duration=" + duration +
-                ", courseList=" + courseList +
-                ", studentList=" + studentList +
-                ", teacherList=" + teacherList +
+                ", courseSet=" + courseSet +
+                ", studentSet=" + studentSet +
                 '}';
     }
-
-
-
 }
