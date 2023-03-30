@@ -1,13 +1,11 @@
 package edu.bootcamp.domain;
 
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class Student {
-    private String id;
     private String name;
     private String username;
     private String email;
@@ -15,42 +13,31 @@ public class Student {
     private Set<String> bootcampCompleted = new LinkedHashSet<>();
 
 
-    public void enrollBootcamp(Bootcamp bootcamp){
+    public void enrollBootcamp(@NotNull Bootcamp bootcamp){
         this.bootcampEnrolled.add(bootcamp.getName());
         bootcamp.getStudentSet().add(this.name);
     }
 
-    public void makeCourse(Course course){
+    public void makeCourse(@NotNull Course course){
         boolean status =course.getStatus().equals("unseen");
 
         if(status){
             course.setStatus("seen");
         }
     }
-    public  void progress(Bootcamp bootcamp){
-        boolean isCompleted = false;
-        String status = bootcamp.getCourseSet().iterator().next().getStatus();
+    public  void progress(@NotNull Bootcamp bootcamp){
+        List<String> courseStatus = new ArrayList<>();
 
-        while(bootcamp.getCourseSet().iterator().hasNext()){
-            if(status.equals("seen")){
-                isCompleted = true;
-            } else {
-                isCompleted = false;
+        for(Course status: bootcamp.getCourseSet()){
+            courseStatus.add(status.getStatus());
             }
-        }
+
+        boolean isCompleted = courseStatus.stream()
+                .allMatch(status -> status.equals("seen"));
 
         if (isCompleted){
             bootcampCompleted.add(bootcamp.getName());
         }
-    }
-
-
-    public String getId() {
-        return id;
-    }
-
-    public final void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -98,18 +85,20 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(id, student.id) && Objects.equals(name, student.name) && Objects.equals(username, student.username) && Objects.equals(email, student.email) && Objects.equals(bootcampEnrolled, student.bootcampEnrolled) && Objects.equals(bootcampCompleted, student.bootcampCompleted);
+        return Objects.equals(name, student.name) && Objects.equals(username, student.username)
+                && Objects.equals(email, student.email)
+                && Objects.equals(bootcampEnrolled, student.bootcampEnrolled)
+                && Objects.equals(bootcampCompleted, student.bootcampCompleted);
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, name, username, email, bootcampEnrolled, bootcampCompleted);
-//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, username, email, bootcampEnrolled, bootcampCompleted);
+    }
 
     @Override
     public String toString() {
         return "Student{" +
-                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
