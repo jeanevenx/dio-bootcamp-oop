@@ -1,23 +1,17 @@
 package edu.bootcamp.domain;
 
-import edu.bootcamp.utility.IDUtil;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class LiveCourse extends Course{
-    private LocalDate date;
+    private LocalDateTime date;
     private String platform;
     private String link;
 
-    public LiveCourse() {
-        this.setId(IDUtil.uniqueID(this.getTitle()));
-    }
-
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
@@ -35,5 +29,19 @@ public class LiveCourse extends Course{
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "LiveCourse{" +
+                ", title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", numberOfHour='" + getNumberOfHour() +
+                ", status='" + getStatus() +
+                ", teacher='" + getTeacher() +
+                ", date=" + date +
+                ", platform='" + platform + '\'' +
+                ", link='" + link + '\'' +
+                '}';
     }
 }
