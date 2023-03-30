@@ -1,29 +1,10 @@
 package edu.bootcamp.domain;
 
-import edu.bootcamp.utility.IDUtil;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Teacher {
-
-    private String id;
     private String name;
-    private String profession;
+    private String courseName;
     private String company;
-    private List<Course> courseList = new ArrayList<>();
 
-    public Teacher() {
-        this.id = IDUtil.uniqueID(this.getName());
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -33,12 +14,12 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getProfession() {
-        return profession;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setProfession(String profession) {
-        this.profession = profession;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public String getCompany() {
@@ -49,22 +30,13 @@ public class Teacher {
         this.company = company;
     }
 
-    public List<Course> getCourseList() {
-        return courseList;
-    }
-
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
-    }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", profession='" + profession + '\'' +
+                ", course name='" + courseName + '\'' +
                 ", company='" + company + '\'' +
-                ", courseList=" + courseList +
                 '}';
     }
 }
