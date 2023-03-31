@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52ce0e3f-a571-4d62-a555-a15aaa58696b" name="Changes" comment="Implementing some service for student">
+    <list default="true" id="52ce0e3f-a571-4d62-a555-a15aaa58696b" name="Changes" comment="Implemented all attributes, getters and setters in the Teacher class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/model/Bootcamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/model/Bootcamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/IStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/IStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/services/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/bootcamp/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/bootcamp/domain/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +44,16 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Workspace/Bootcamp Banco Pan/dio-bootcamp-oop/snapshot/code-snapshot-enroll.png",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.bootcamp.Main" />
@@ -257,7 +258,63 @@
       <option name="project" value="LOCAL" />
       <updated>1679793692018</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Refactoring to make the code more simple">
+      <created>1679855062495</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1679855062495</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Creating some object to test the code">
+      <created>1679971848972</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1679971848972</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added 2 methods to student class">
+      <created>1680127481882</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680127481882</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Implemented the bootcamp class">
+      <created>1680218116950</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680218116950</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Implemented all attributes and methods in the course class">
+      <created>1680218224542</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1680218224542</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Implemented all attributes and methods in the LiveCourse class">
+      <created>1680218363598</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680218363598</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Implemented all attributes and methods in the Student class">
+      <created>1680218435787</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680218435787</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implemented all attributes, getters and setters in the Teacher class">
+      <created>1680218582488</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680218582488</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,8 +329,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Implementing the bootcamp class" />
     <MESSAGE value="Implementing the Student class" />
     <MESSAGE value="Created these domain model classes" />
     <MESSAGE value="Add an utility package" />
@@ -291,6 +346,14 @@
     <MESSAGE value="Update - 1" />
     <MESSAGE value="Update" />
     <MESSAGE value="Implementing some service for student" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing some service for student" />
+    <MESSAGE value="Refactoring to make the code more simple" />
+    <MESSAGE value="Creating some object to test the code" />
+    <MESSAGE value="Added 2 methods to student class" />
+    <MESSAGE value="Implemented the bootcamp class" />
+    <MESSAGE value="Implemented all attributes and methods in the course class" />
+    <MESSAGE value="Implemented all attributes and methods in the LiveCourse class" />
+    <MESSAGE value="Implemented all attributes and methods in the Student class" />
+    <MESSAGE value="Implemented all attributes, getters and setters in the Teacher class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented all attributes, getters and setters in the Teacher class" />
   </component>
 </project>
