@@ -34,7 +34,7 @@ e o matricula no bootcamp especificado. </br></br>
 
 - <b>makeCourse(@NotNull Course course):</b>
 O método recebe um objeto Course "not null" como parâmetro. 
-Ele verifica se o status é igual a "unseen", se for ele seta o status como "seen".  </br>
+Ele verifica se o status é igual a "unseen", se for ele seta o status como "seen".  </br></br>
   <img src=".\snapshot/code-snapshot-makecourse.png" title="método makeCourse - code snapshot"/></br></br>
 
 - <b>progress(@NotNull Bootcamp bootcamp):</b>
